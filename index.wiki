@@ -1,1 +1,83 @@
-= Notes on JavaScript = 
+= Notes on JavaScript =
+
+
+== To-do ==
+* Read specs
+* Babel, transpiler, ES2015/2016/2017?
+ECMAScript 6th Edition, officially known as ECMAScript 2015.
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_Next_support_in_Mozilla
+* require?
+* npm
+* Webpack
+* https://github.com/getify/You-Dont-Know-JS
+* https://leanpub.com/setting-up-es6/read
+* https://github.com/thejameskyle/babel-handboo://github.com/thejameskyle/babel-handbook
+* Unicode?
+* https://devfreebooks.github.io/javascript/ ?
+
+
+== Specs ==
+https://www.ecma-international.org/publications/standards/Standard.htm
+https://www.ecma-international.org/ecma-262/7.0/
+https://www.ecma-international.org/ecma-262/6.0/
+https://www.ecma-international.org/ecma-262/5.1/
+https://www.ecma-international.org/publications/standards/Ecma-402.htm
+https://www.ecma-international.org/publications/standards/Ecma-262.htm
+https://www.ecma-international.org/ecma-262/7.0/index.html
+
+
+== types ==
+
+* boolean
+	* true/false (lowercase only)
+
+* number
+	* 64-bit
+	* signed
+	* decimal (integer calculations precise, decimal calculations no)
+	* scientific notation: e.g. 2.998e8
+	* Infinity / -Infinity
+		* Infinity - 1 === Infinity and Infinity + 1 === Infinity
+	* NaN
+		* e.g. 0 / 0, Infinity - Infinity
+		* (NaN == NaN) == false
+
+* string
+	* Can concatenate with +.
+	* Can be compared with <, >, >=, <=.
+
+
+* undefined
+* object
+	* null
+
+
+
+== type coercion ==
+
+* When `null` or `undefined` is on either side of the `==` operator, expression
+  is `true` only if both sides are one of `null` or `undefined`.
+	* When we want to test whether a value has a real value instead of
+	  `null` or `undefined`, we can simply compare it to `null` with the
+	  `==` or `!=` operator.
+
+* 0, NaN and "" count as false; all other values count as true.
+	* e.g. 0 == false, and "" == false
+
+
+
+== operators ==
+
+* === and !== test without type coercion.
+* x % y
+	* remainder of x/y (known as modulo, but remainder more correct?)
+* logical
+	* &&, ||, !
+	* Convert value to its left to boolean. Left-to-right lazy evaluation,
+	  returns last evaluated value rather than the boolean value, e.g. null
+	  && false returns null; true && null returns null.
+* ?:
+	* called the conditional operator
+	* lazy-evaluates
+* typeof
+	* operator not function, so doesn't need brackets
