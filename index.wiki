@@ -13,6 +13,8 @@ ECMAScript 6th Edition, officially known as ECMAScript 2015.
 * https://leanpub.com/setting-up-es6/read
 * https://github.com/thejameskyle/babel-handboo://github.com/thejameskyle/babel-handbook
 * Unicode?
+* Omitting semicolons at end of statements?
+* List of reserved words and keywords?
 * https://devfreebooks.github.io/javascript/ ?
 
 
@@ -24,6 +26,20 @@ https://www.ecma-international.org/ecma-262/5.1/
 https://www.ecma-international.org/publications/standards/Ecma-402.htm
 https://www.ecma-international.org/publications/standards/Ecma-262.htm
 https://www.ecma-international.org/ecma-262/7.0/index.html
+
+
+== comments ==
+
+`//` and `/**/`
+
+
+== variables ==
+
+e.g. `var v1 = "v1", v2 = "v2";`
+
+Uninitialised variables start off with value of `undefined`.
+
+environment:: collection of variables and their values existing at a given time
 
 
 == types ==
@@ -45,12 +61,13 @@ https://www.ecma-international.org/ecma-262/7.0/index.html
 * string
 	* Can concatenate with +.
 	* Can be compared with <, >, >=, <=.
+	* .length
 
 
 * undefined
 * object
 	* null
-
+* function
 
 
 == type coercion ==
@@ -81,3 +98,40 @@ https://www.ecma-international.org/ecma-262/7.0/index.html
 	* lazy-evaluates
 * typeof
 	* operator not function, so doesn't need brackets
+
+
+== conditional flow ==
+
+* if... else
+* while
+* do... while
+* for (var number = 0; number <= x; number += 1) {}
+* switch (), case:, default:
+	* (!) Must break at end of each case if fallthrough not intended.
+	  Potential source of bugs.
+* break
+	* breaks out of for, while, do... while and switch statements.
+* continue
+	* jump to start of loop's next iteration.
+
+
+== blocks ==
+
+* Sequence of statements wrapped in braces
+
+
+== built-in functions ==
+
+* alert()
+* confirm()
+* isNan()
+* prompt()
+
+
+== built-in objects ==
+
+* console
+	* log()
+* Math
+	* max()
+	* min()
