@@ -2,6 +2,8 @@
 
 
 == To-do ==
+* strict mode?
+* `new function f(){}`?
 * Read specs
 * Babel, transpiler, ES2015/2016/2017?
 ECMAScript 6th Edition, officially known as ECMAScript 2015.
@@ -13,6 +15,11 @@ ECMAScript 6th Edition, officially known as ECMAScript 2015.
 * https://leanpub.com/setting-up-es6/read
 * https://github.com/thejameskyle/babel-handboo://github.com/thejameskyle/babel-handbook
 * Unicode?
+* debugger?
+* Any security benefits of using parentheses `()` as grouping operator to force
+  parsing as expression rather than block, e.g. with eval()?
+* Are browser bugs here: http://kangax.github.io/nfe/#function-statements still
+  relevant?
 * Omitting semicolons at end of statements?
 * List of reserved words and keywords?
 * https://devfreebooks.github.io/javascript/ ?
@@ -118,6 +125,59 @@ environment:: collection of variables and their values existing at a given time
 == blocks ==
 
 * Sequence of statements wrapped in braces
+
+
+== functions ==
+
+Function expression:
+{{{
+var v = function name(param1, param2) {
+	return;
+}
+}}}
+or function declaration:
+{{{
+function f(param1, param2) {
+	return;
+}
+}}}
+or function constructor:
+{{{
+new Function (paramsList, "return;");
+}}}
+where paramsList can be
+`"param1", "param2"` or
+`"param1, param2"` or
+`["param1", "param2"]`
+
+* Empty brackets if no parameters.
+* Functions by default return `undefined`, and so does a `return` statement
+  without an expression after it.
+* Parameter variables and variables created with `var` within function braces
+  are local to function (variables declared without `var` are global).
+  Lexical/static scoping.
+* Without `let`, functions are the only things that create a new scope (other
+  blocks do not). `let` works like `var`, but creates a variable that is local
+  to the enclosing block, not the enclosing function.
+* `(function f(){});` is a function expression rather than a declaration,
+  because parentheses `()` are grouping operators and grouping operators can
+  only contain an expression.
+
+* Function name can be omitted in function expressions to create anonymous
+  functions. A function expression can be used as a IIFE(Immediately Invoked
+  Function Expression) which runs as soon as it is defined.
+* The `name` in a named function expression is local to the function body, so
+  it can only be referenced from within the function body (e.g. with
+  recursion). This avoids using the non-standard `arguments.callee` property.
+* Named function expressions are also useful for debugging, so we can have
+  helpful function names in call stack.
+* Function expressions are not placed into memory during compile phase
+  ("hoisted"), but function declarations are. (Except older browser quirks and
+  bugs.)
+* Function declarations are not supposed to appear in blocks (blocks can only
+  contain statements), and when it happens it should be considered a syntax
+  error, but browser implementations vary. Create functions conditionally with
+  function expressions.
 
 
 == built-in functions ==
