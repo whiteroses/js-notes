@@ -180,6 +180,20 @@ where paramsList can be
   function expressions.
 
 
+== "hoisting" ==
+
+Variable and function declarations are loaded into memory during compile phase,
+before any code is executed. This means we can refer to them in the code before
+they are declared. Initialisations are not "hoisted" though: a variable is
+`undefined` if it is declared and initialised together at a later point in the
+code.
+
+Functions are hoisted first, then variables.
+
+Multiple/duplicate `var` declarations are effectively ignored, but function
+declarations do override previous ones.
+
+
 == built-in functions ==
 
 * alert()
