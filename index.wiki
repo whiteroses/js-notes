@@ -141,7 +141,7 @@ function f(param1, param2) {
 	return;
 }
 }}}
-or function constructor:
+or Function constructor:
 {{{
 new Function (paramsList, "return;");
 }}}
@@ -178,6 +178,16 @@ where paramsList can be
   contain statements), and when it happens it should be considered a syntax
   error, but browser implementations vary. Create functions conditionally with
   function expressions.
+* Function objects created with the Function constructor allow JavaScript code
+  to be dynamically created and compiled at runtime. However, the Function
+  constructor parses the function body and creates a new function object each
+  time it is called, so if the call to the constructor appears within a loop or
+  a frequently-called function, this can be inefficient. Functions
+  created with the Function constructor do not use lexical scoping; they are
+  always compiled as if they were top-level functions, so do not capture local
+  scope.
+* Invoking the Function constructor as a function (without the `new` operator)
+  has the same effect as invoking it as a constructor.
 
 
 == "hoisting" ==
