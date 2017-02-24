@@ -1,7 +1,8 @@
-= Notes on JavaScript =
+# Notes on JavaScript
 
 
-== To-do ==
+## To-do
+
 * strict mode?
 * `new function f(){}`?
 * Read specs
@@ -25,31 +26,35 @@ ECMAScript 6th Edition, officially known as ECMAScript 2015.
 * https://devfreebooks.github.io/javascript/ ?
 
 
-== Specs ==
-https://www.ecma-international.org/publications/standards/Standard.htm
-https://www.ecma-international.org/ecma-262/7.0/
-https://www.ecma-international.org/ecma-262/6.0/
-https://www.ecma-international.org/ecma-262/5.1/
-https://www.ecma-international.org/publications/standards/Ecma-402.htm
-https://www.ecma-international.org/publications/standards/Ecma-262.htm
-https://www.ecma-international.org/ecma-262/7.0/index.html
+## Specs
+
+* https://www.ecma-international.org/publications/standards/Standard.htm
+* https://www.ecma-international.org/ecma-262/7.0/
+* https://www.ecma-international.org/ecma-262/6.0/
+* https://www.ecma-international.org/ecma-262/5.1/
+* https://www.ecma-international.org/publications/standards/Ecma-402.htm
+* https://www.ecma-international.org/publications/standards/Ecma-262.htm
+* https://www.ecma-international.org/ecma-262/7.0/index.html
 
 
-== comments ==
+## comments
 
 `//` and `/**/`
 
 
-== variables ==
+## variables
 
 e.g. `var v1 = "v1", v2 = "v2";`
 
 Uninitialised variables start off with value of `undefined`.
 
-environment:: collection of variables and their values existing at a given time
+<dl>
+	<dt>environment</dt>
+	<dd>collection of variables and their values existing at a given time</dd>
+</dl>
 
 
-== types ==
+## types
 
 * boolean
 	* true/false (lowercase only)
@@ -77,7 +82,7 @@ environment:: collection of variables and their values existing at a given time
 * function
 
 
-== type coercion ==
+## type coercion
 
 * When `null` or `undefined` is on either side of the `==` operator, expression
   is `true` only if both sides are one of `null` or `undefined`.
@@ -90,7 +95,7 @@ environment:: collection of variables and their values existing at a given time
 
 
 
-== operators ==
+## operators
 
 * === and !== test without type coercion.
 * x % y
@@ -107,7 +112,7 @@ environment:: collection of variables and their values existing at a given time
 	* operator not function, so doesn't need brackets
 
 
-== conditional flow ==
+## conditional flow
 
 * if... else
 * while
@@ -122,29 +127,29 @@ environment:: collection of variables and their values existing at a given time
 	* jump to start of loop's next iteration.
 
 
-== blocks ==
+## blocks
 
 * Sequence of statements wrapped in braces
 
 
-== functions ==
+## functions
 
 Function expression:
-{{{
-var v = function name(param1, param2) {
-	return;
-}
-}}}
+
+	var v = function name(param1, param2) {
+		return;
+	}
+
 or function declaration:
-{{{
-function f(param1, param2) {
-	return;
-}
-}}}
+
+	function f(param1, param2) {
+		return;
+	}
+
 or Function constructor:
-{{{
-new Function (paramsList, "return;");
-}}}
+
+	new Function (paramsList, "return;");
+
 where paramsList can be
 `"param1", "param2"` or
 `"param1, param2"` or
@@ -190,7 +195,7 @@ where paramsList can be
   has the same effect as invoking it as a constructor.
 
 
-== "hoisting" ==
+## "hoisting"
 
 Variable and function declarations are loaded into memory during compile phase,
 before any code is executed. This means we can refer to them in the code before
@@ -204,7 +209,7 @@ Multiple/duplicate `var` declarations are effectively ignored, but function
 declarations do override previous ones.
 
 
-== built-in functions ==
+## built-in functions
 
 * alert()
 * confirm()
@@ -212,7 +217,7 @@ declarations do override previous ones.
 * prompt()
 
 
-== built-in objects ==
+## built-in objects
 
 * console
 	* log()
