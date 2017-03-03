@@ -22,7 +22,6 @@ where paramsList can be
 `"param1, param2"` or
 `["param1", "param2"]`
 
-* Empty brackets if no parameters.
 * Functions by default return `undefined`, and so does a `return` statement
   without an expression after it.
 * Parameter variables and variables created with `var` within function braces
@@ -62,6 +61,11 @@ where paramsList can be
   has the same effect as invoking it as a constructor.
 
 
+## Parameters and arguments
+
+* Empty brackets if no parameters.
+
+
 ## "hoisting"
 
 Variable and function declarations are loaded into memory during compile phase,
@@ -74,4 +78,3 @@ Functions are hoisted first, then variables.
 
 Multiple/duplicate `var` declarations are effectively ignored, but function
 declarations do override previous ones.
-
