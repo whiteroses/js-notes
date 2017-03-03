@@ -64,6 +64,11 @@ where paramsList can be
 ## Parameters and arguments
 
 * Empty brackets if no parameters.
+* When a function is called with more arguments than the number in its
+  parameters list, the extra arguments are ignored (no errors). When called
+  with not enough arguments, the missing parameters are assigned the value
+  `undefined`. This can be used to write functions that take optional
+  arguments.
 
 
 ## "hoisting"
